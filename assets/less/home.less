@@ -1,0 +1,1625 @@
+body,
+html {
+    background-color: white;
+    // height: 18000px;
+}
+
+// 水平居中容器类
+.wrap {
+    width: 80vw;
+    margin: 0 auto;
+}
+
+// ------------- 头部导航区域 -------------
+header {
+    height: 140px;
+    background-color: rgb(249, 251, 255);
+    nav {
+        height: 140px;
+        background-color: rgb(249, 251, 255);
+        transition: height 0.5s;
+
+        .wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 15px;
+            height: 100%;
+            // 左侧logo区域
+            .left {
+                img {
+                    height: 54px;
+                }
+            }
+            // 右侧标题导航区域
+            .right {
+                display: flex;
+                width: 60%;
+                justify-content: space-between;
+                a {
+                    // flex: 1;
+                    // text-align: center;
+                    margin-right: 20px;
+                    color: #5257a6;
+                    font-size: 15px;
+                    font-weight: bold;
+                }
+                a.active {
+                    color: #ff8a73;
+                }
+            }
+        }
+
+        // 设置导航条的固定样式
+        &.fixed {
+            position: fixed;
+            width: 100vw;
+            height: 80px;
+            z-index: 10;
+            background-color: white;
+            box-shadow: 0 0 7px rgb(0 0 0 / 15%);
+        }
+    }
+}
+
+// ------------- 轮播图区域 -------------
+#swiper {
+    padding: 50px 0;
+    background-color: rgb(249, 251, 255);
+    // 主要区域
+    .wrap.main {
+        display: flex;
+        justify-content: space-between;
+        // 左侧文字描述
+        .left {
+            flex: 6;
+
+            h1 {
+                font-size: 50px;
+                margin-bottom: 19px;
+                color: #6262a0;
+            }
+            .desc {
+                font-size: 22px;
+                margin-bottom: 40px;
+            }
+            // 底部按钮
+            .btn-list {
+                display: flex;
+                // width: 50%;
+                height: 50px;
+                margin-bottom: 40px;
+                .learn-more {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 150px;
+                    background-color: rgb(81, 85, 168);
+                    color: white;
+                    height: 100%;
+                    border-radius: 50px;
+                    margin-right: 15px;
+                    transition: all 0.5s;
+                    &:hover {
+                        cursor: pointer;
+                        background-color: rgb(255, 139, 115);
+                        transform: translateY(-5%);
+                    }
+                }
+
+                .watch-video {
+                    display: flex;
+                    align-items: center;
+                    transition: all 0.5s;
+                    &:hover {
+                        cursor: pointer;
+
+                        transform: translateY(-10%);
+                        span {
+                            color: rgb(255, 139, 115) !important;
+                        }
+                    }
+                    svg {
+                        width: 50px;
+                        height: 50px;
+                    }
+                    span {
+                        color: rgb(102, 102, 102);
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+        // 右侧图片
+        .right {
+            flex: 4;
+            img {
+                width: 100%;
+                // transform: translateX(30%);
+                position: relative;
+                left: 35%;
+                animation: imgUp 3.7s infinite;
+
+                // 图片向上的动画
+                @keyframes imgUp {
+                    50% {
+                        transform: translateY(-5%);
+                    }
+                    100% {
+                        transform: translateY(0%);
+                    }
+                }
+            }
+        }
+        //
+        .left,
+        .right {
+            opacity: 0;
+        }
+    }
+
+    // 轮播图指示器
+    .indicator.wrap {
+        span {
+            transition: all 1s;
+            margin-right: 30px;
+            &:hover {
+                cursor: pointer;
+                color: rgb(255, 139, 115);
+            }
+        }
+    }
+}
+
+// ------------- 小卡片区域 -------------
+#card {
+    padding-top: 100px;
+    // text-align: center;
+    .wrap {
+        display: flex;
+        justify-content: space-between;
+        .card-item {
+            box-sizing: border-box;
+            width: 30%;
+            text-align: center;
+            padding: 40px 30px;
+            background-color: white;
+            box-shadow: 0px 5px 10px 0px rgb(106 106 106 / 12%);
+            transition: all 1s;
+
+            &:hover {
+                transform: translateY(-5%);
+                div,
+                .title {
+                    color: rgb(255, 139, 115);
+                }
+            }
+
+            // 字体图标
+            & > div {
+                font-size: 70px;
+                color: #6262a0;
+                transition: all 1.5s;
+            }
+
+            // 卡片标题
+            .title {
+                font-size: 18px;
+                margin: 20px 0;
+                color: #6262a0;
+                font-weight: bold;
+                transition: all 1.5s;
+            }
+
+            // 描述信息
+            .desc {
+                font-size: 15px;
+                line-height: 23px;
+            }
+        }
+    }
+}
+
+// ------------- 关于公司区域 -------------
+#about {
+    padding-top: 100px;
+    .wrap {
+        display: flex;
+        .left {
+            flex: 1;
+            img {
+                width: 100%;
+            }
+        }
+        .right {
+            flex: 1;
+            padding-left: 40px;
+            .top {
+                font-size: 18px;
+                color: #ff8a73;
+                font-weight: bold;
+            }
+            .title {
+                font-size: 32px;
+                color: #6262a0;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+            .desc {
+                margin-bottom: 17px;
+            }
+            .list {
+                li {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 13px;
+                    // 小圆点
+                    .dot {
+                        position: relative;
+                        display: inline-block;
+                        height: 8px;
+                        width: 8px;
+                        border-radius: 50%;
+                        border: 2px solid #6262a0;
+                        margin-right: 10px;
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            height: 6px;
+                            width: 6px;
+                            background-color: #6262a0;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+            }
+            .btn {
+                width: 25%;
+                text-align: center;
+                margin-top: 30px;
+                background-color: rgb(255, 139, 115);
+                border-radius: 1.8em;
+                color: white;
+                transition: all 0.5s;
+                &:hover {
+                    cursor: pointer;
+                    background-color: rgb(82, 87, 166);
+                    transform: translateY(-5%);
+                }
+            }
+        }
+    }
+}
+
+// ------------- 公司服务区域 -------------
+#service {
+    position: relative;
+    padding-top: 100px;
+
+    .wrap {
+        // 标题
+        .title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            color: #6262a0;
+        }
+        // 线条区域
+        .line {
+            perspective: 1000px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+            .left,
+            .right {
+                display: inline-block;
+                width: 70px;
+                height: 1px;
+                background-color: #6262a0;
+            }
+            img {
+                margin: 0 7px;
+                animation: imgRotate 10s infinite;
+            }
+
+            // 图片翻转动画
+            @keyframes imgRotate {
+                50% {
+                    transform: rotateX(180deg);
+                }
+                75% {
+                    transform: rotateX(360deg);
+                }
+            }
+        }
+        // 描述区域
+        .desc {
+            text-align: center;
+            line-height: 25px;
+        }
+
+        // 卡片区域
+        .card {
+            .card-list {
+                position: relative;
+                display: flex;
+                justify-content: space-between;
+                margin-top: 50px;
+                .card-item {
+                    width: 31%;
+                    overflow: hidden;
+                    box-shadow: 0px 5px 10px 0px rgb(106 106 106 / 12%);
+                    // 图片区域
+                    a {
+                        position: relative;
+                        display: block;
+
+                        // 遮罩层
+                        .cover {
+                            position: absolute;
+                            z-index: 9;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            background-color: black;
+                            opacity: 0;
+                            transition: opacity 0.5s;
+                        }
+
+                        // 图片
+                        img {
+                            width: 100%;
+                            transition: all 0.5s;
+                        }
+
+                        &:hover {
+                            img {
+                                transform: scale(1.05);
+                            }
+
+                            // 遮罩层
+                            .cover {
+                                opacity: 0.1;
+                            }
+                        }
+                    }
+
+                    .title {
+                        font-size: 18px;
+                        font-weight: bold;
+                        color: #6262a0;
+                        margin: 10px 0;
+                        transition: all 0.5s;
+
+                        &:hover {
+                            cursor: pointer;
+                            color: #ff8a73;
+                        }
+                    }
+
+                    .desc {
+                        padding: 0px 20px 30px;
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            // 轮播图箭头区域
+            .arrow {
+                .left,
+                .right {
+                    position: absolute;
+                    top: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 56px;
+                    height: 56px;
+                    border-radius: 50%;
+                    background-color: white;
+                    box-shadow: 0px 5px 10px 0px rgb(106 106 106 / 15%);
+                    opacity: 0;
+                    transition: all 0.5s;
+
+                    &:hover {
+                        cursor: pointer;
+                        color: #ff8a73;
+                    }
+                }
+                .left {
+                    left: 13%;
+                }
+                .right {
+                    right: 13%;
+                }
+            }
+
+            // hover显示箭头
+            &:hover {
+                cursor: pointer;
+                .arrow .left {
+                    opacity: 1;
+                    left: 5%;
+                }
+
+                .arrow .right {
+                    opacity: 1;
+                    right: 5%;
+                }
+            }
+        }
+
+        // 公司数据区域
+        .company-data {
+            padding-top: 100px;
+            display: flex;
+            justify-content: space-between;
+            .item {
+                width: 23%;
+                text-align: center;
+                .company_icon {
+                    position: relative;
+                    i {
+                        font-size: 70px;
+                        color: #6262a0;
+                    }
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: url("../images/company/shap1.png") no-repeat
+                            center;
+                        transition: all 1.5s;
+                    }
+
+                    &:hover {
+                        &::before {
+                            transform: rotate(45deg);
+                        }
+                    }
+                }
+                .number {
+                    font-size: 60px;
+                    color: #ff8a73;
+                    font-weight: bold;
+                    margin: 5px 0;
+                }
+                .name {
+                    font-size: 18px;
+                    font-weight: bold;
+                    color: #6262a0;
+                }
+            }
+        }
+    }
+}
+
+// ------------- 项目展示区域 -------------
+#project {
+    padding-top: 100px;
+
+    // 卡片轮播图区域
+    .card-swiper {
+        margin-top: 60px;
+
+        // 轮播图图片区域
+        .list {
+            display: flex;
+            justify-content: space-between;
+            // 每个轮播图图片
+            .item {
+                position: relative;
+                width: 22%;
+                height: 300px;
+                overflow: hidden;
+                transition: all 0.6s;
+                img {
+                    width: 130%;
+                    height: 100%;
+                }
+                // 遮罩层
+                .cover {
+                    position: absolute;
+                    top: 0%;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0);
+
+                    transition: opacity 0.5s;
+
+                    // 遮罩层中的文字
+                    .title {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        padding-left: 40px;
+                        transition: all 0.7s
+                            cubic-bezier(0.67, -0.54, 0.27, 1.56);
+                        opacity: 0;
+                        h3 {
+                            color: white;
+                        }
+                        p {
+                            color: rgba(255, 255, 255, 0.7);
+                        }
+                    }
+                }
+
+                &:hover {
+                    cursor: pointer;
+                    transform: translateY(-2%);
+                    // 遮罩层
+                    .cover {
+                        background-color: rgba(0, 0, 0, 0.3);
+
+                        // 遮罩层中的文字
+                        .title {
+                            bottom: 10%;
+                            opacity: 1;
+                            // transition-delay: 0.1s;
+                        }
+                    }
+                }
+            }
+        }
+
+        // 指示器区域
+        .indicator {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+
+            .dot {
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background-color: pink;
+                margin-right: 12px;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            .active {
+                background-color: #6262a0;
+            }
+        }
+    }
+}
+
+// ------------- 技能数据区域 -------------
+#skill {
+    padding-top: 100px;
+
+    .wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        // 左侧图片
+        .left {
+            width: 40%;
+            img {
+                width: 100%;
+                animation: imgUp 3.7s infinite;
+            }
+        }
+
+        // 右侧数据
+        .right {
+            width: 50%;
+            h2 {
+                color: #6262a0;
+                font-size: 32px;
+                font-weight: bold;
+            }
+            .desc {
+                line-height: 170%;
+                margin: 20px 0 40px 0;
+            }
+
+            // 进度条区域
+            .progress {
+                // 每个进度条
+                .item {
+                    margin-bottom: 30px;
+                    .header {
+                        display: flex;
+                        justify-content: space-between;
+                        // 标题
+                        .title {
+                            font-size: 18px;
+                            color: #6262a0;
+                        }
+                        // 百分比
+                        .precent {
+                            color: #ff8a73;
+                        }
+                    }
+
+                    // 进度条展示
+                    .progress-bar {
+                        display: flex;
+                        align-items: center;
+                        margin-top: 5px;
+                        width: 100%;
+                        height: 8px;
+                        padding-left: 2px;
+                        background-color: #e8f1fd;
+
+                        // 里面的具体进度条
+                        .detial-info {
+                            width: 90%;
+                            height: 4px;
+                            background: #6262a0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ------------- 团队成员区域 -------------
+#creative-team {
+    padding-top: 100px;
+    // 团队成员区域
+    .team-worker {
+        position: relative;
+        // 成员卡片区域
+        .card-list {
+            padding-top: 50px;
+            display: flex;
+            justify-content: space-between;
+            .item {
+                box-sizing: border-box;
+                width: 23%;
+                box-shadow: 0px 5px 10px 0px rgb(106 106 106 / 15%);
+                padding: 30px;
+                text-align: center;
+                &:hover {
+                    h3 {
+                        color: #ff8a73;
+                    }
+                }
+                img {
+                    width: 100%;
+                }
+                h3 {
+                    color: #6262a0;
+                    font-weight: bold;
+                    margin: 10px 0;
+                    transition: all 0.7s;
+                }
+                p {
+                    margin-bottom: 23px;
+                }
+
+                // 联系方式
+                .contact {
+                    width: 70%;
+                    margin: 0 auto;
+                    display: flex;
+                    justify-content: space-between;
+                    li {
+                        width: 23%;
+
+                        svg {
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+        }
+
+        // 轮播图箭头区域
+        .arrow {
+            .left,
+            .right {
+                position: absolute;
+                top: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 56px;
+                height: 56px;
+                border-radius: 50%;
+                background-color: white;
+                box-shadow: 0px 5px 10px 0px rgb(106 106 106 / 15%);
+                opacity: 0;
+                transition: all 0.5s;
+
+                &:hover {
+                    cursor: pointer;
+                    color: #ff8a73;
+                }
+            }
+            .left {
+                left: 13%;
+            }
+            .right {
+                right: 13%;
+            }
+        }
+
+        // hover显示箭头
+        &:hover {
+            cursor: pointer;
+            .arrow .left {
+                opacity: 1;
+                left: 5%;
+            }
+
+            .arrow .right {
+                opacity: 1;
+                right: 5%;
+            }
+        }
+    }
+}
+
+// ------------- 创建模板区域 -------------
+#template {
+    margin-top: 100px;
+    background-color: rgb(249, 251, 255);
+    padding-top: 20px;
+    .wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .left {
+            text-align: center;
+            h3 {
+                color: #6262a0;
+                font-size: 24px;
+                font-weight: bold;
+            }
+            .desc {
+                margin-top: 25px;
+                line-height: 170%;
+                padding: 0 70px;
+            }
+            .btn {
+                width: 20%;
+                height: 50px;
+                text-align: center;
+                line-height: 50px;
+                margin: 50px auto;
+                background-color: rgb(81, 85, 168);
+                border-radius: 1.8em;
+                color: white;
+                transition: all 0.7s;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: #ff8a73;
+                }
+            }
+        }
+    }
+}
+
+// ------------- 价格计划区域 -------------
+#price-plan {
+    padding-top: 100px;
+    // 价格卡片区域
+    .card {
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+
+        margin-top: 50px;
+
+        .item {
+            width: 30%;
+            padding: 30px 0 15px 0;
+            box-shadow: 0px 5px 10px 0px rgb(106 106 106 / 15%);
+            transition: all 0.5s;
+
+            .title {
+                margin-top: 10px;
+                font-size: 18px;
+            }
+            .price {
+                margin-bottom: 15px;
+                color: #6262a0;
+                h2 {
+                    color: #6262a0;
+                    font-size: 60px;
+                }
+            }
+            .desc {
+                line-height: 250%;
+            }
+            .btn {
+                width: 50%;
+                margin: 20px auto;
+            }
+
+            &:hover {
+                cursor: pointer;
+                transform: translateY(-4%);
+            }
+        }
+
+        .item.active {
+            .price h2 {
+                color: #ff8a73;
+            }
+            .btn {
+                background-color: #ff8a73;
+            }
+        }
+    }
+}
+
+// ------------- 最近新闻区域 -------------
+#recent-news {
+    margin-top: 100px;
+    padding-top: 100px;
+    background-color: rgb(249, 251, 255);
+    padding-bottom: 80px;
+
+    // 新闻卡片区域
+    .card-list {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+        .item {
+            width: 31%;
+            box-shadow: 0px 5px 10px 0px rgb(106 106 106 / 15%);
+            // 新闻封面区域
+            img {
+                width: 100%;
+            }
+
+            // 新闻内容区域
+            .content {
+                margin-top: -10px;
+                padding: 20px;
+                padding-right: 25px;
+                background-color: rgb(249, 251, 255);
+                .label {
+                    transition: all 0.5s;
+                    &:hover {
+                        cursor: pointer;
+                        color: #ff8a73;
+                    }
+                }
+                h3 {
+                    font-size: 18px;
+                    font-weight: bold;
+                    color: #6262a0;
+                    margin: 10px 0 15px 0;
+                    transition: all 0.5s;
+                    &:hover {
+                        cursor: pointer;
+                        color: #ff8a73;
+                    }
+                }
+                .detial {
+                    line-height: 150%;
+                    margin-bottom: 15px;
+                }
+                .time {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .right {
+                        font-weight: bold;
+                        color: #6262a0;
+                        transition: all 0.5s;
+                        &:hover {
+                            cursor: pointer;
+                            color: #ff8a73;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ------------- 赞助商LOGO区域 -------------
+#sponsor {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    .wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        li {
+            width: 13%;
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+// ------------- 客户回馈区域 -------------
+#customer-feedback {
+    padding: 100px 0;
+    background-color: rgb(249, 251, 255);
+    .wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        // 左侧图片区域
+        .left {
+            width: 40%;
+            text-align: center;
+            img {
+                width: 100%;
+            }
+        }
+
+        // 右侧内容区域
+        .right {
+            width: 50%;
+            h3 {
+                font-size: 18px;
+                color: #ff8a73;
+            }
+            h2 {
+                font-size: 32px;
+                color: #6262a0;
+                margin: 20px 0;
+            }
+
+            // 客户回馈内容区域
+            .main {
+                .content {
+                    font-size: 20px;
+                    line-height: 200%;
+                    margin-bottom: 20px;
+                }
+                .name {
+                    font-size: 18px;
+                    font-weight: bold;
+                    color: #6262a0;
+                }
+                // 箭头区域
+                .arrow {
+                    margin-top: 30px;
+                    display: flex;
+                    .left,
+                    .right {
+                        margin-right: 10px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 56px;
+                        height: 56px;
+                        border-radius: 50%;
+                        background-color: rgb(249, 251, 255);
+                        box-shadow: 0px 5px 10px 0px rgb(106 106 106 / 15%);
+                        transition: all 0.5s;
+
+                        &:hover {
+                            cursor: pointer;
+                            color: #ff8a73;
+                        }
+
+                        i {
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ------------- 订阅区域 -------------
+#subscribe {
+    padding: 100px 0;
+    .wrap {
+        width: 60%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .left {
+            width: 65%;
+            h3 {
+                font-size: 18px;
+                color: #ff8a73;
+            }
+            h2 {
+                font-size: 32px;
+                font-weight: bold;
+                color: #6262a0;
+                border-bottom: 1px solid #e0e0ec;
+                margin-bottom: 24px;
+                padding-bottom: 12px;
+            }
+            .desc {
+                padding-right: 10px;
+                margin-bottom: 43px;
+                line-height: 170%;
+            }
+            .email {
+                display: flex;
+                align-items: center;
+                height: 50px;
+                padding-right: 5px;
+
+                input {
+                    box-sizing: border-box;
+                    border: 1px solid #d0d0e2;
+                    padding: 10px 20px;
+                    width: 80%;
+                    height: 50px;
+                    line-height: 50px;
+                    transition: all 0.5s;
+
+                    &::placeholder {
+                        font-size: 15px;
+                    }
+
+                    &:focus {
+                        border-color: #5257a6;
+                        outline: none;
+                    }
+                }
+                i {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 12%;
+                    height: 100%;
+                    font-size: 40px;
+                    margin-left: 10px;
+                    background-color: rgb(255, 139, 115);
+                    color: white;
+                    transition: all 0.5s;
+
+                    &:hover {
+                        cursor: pointer;
+                        opacity: 0.7;
+                    }
+                }
+            }
+        }
+
+        .right {
+            position: relative;
+            width: 30%;
+            .letter {
+                width: 100%;
+            }
+            .bird {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 45px;
+                height: 40px;
+                animation: birdMove 3.7s infinite;
+            }
+            .bird1 {
+                top: 7%;
+                left: 5%;
+                animation: bird1Move 3.7s infinite;
+            }
+
+            .bird2 {
+                top: 27%;
+                left: 35%;
+                animation: bird2Move 3.7s infinite;
+            }
+            .bird3 {
+                top: 7%;
+                left: 78%;
+                animation: bird3Move 3.7s infinite;
+            }
+
+            // 小鸟的动画
+            @keyframes bird1Move {
+                50% {
+                    transform: translate(10%, 10%);
+                }
+            }
+
+            @keyframes bird2Move {
+                50% {
+                    transform: translate(-10%, -10%);
+                }
+            }
+
+            @keyframes bird3Move {
+                50% {
+                    transform: translate(-10%, 10%);
+                }
+            }
+        }
+    }
+}
+
+// ------------- 联系区域 -------------
+#contact {
+    padding: 100px 0;
+    background-color: rgb(249, 251, 255);
+    // 主要内容
+    .main {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 50px;
+        // 左侧表单区域
+        .left {
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            input,
+            textarea {
+                width: 90%;
+                outline: none;
+                border: none;
+                border-bottom: 1px solid #d0d0e2;
+                padding: 20px 0;
+                margin-bottom: 14px;
+                background-color: rgb(249, 251, 255);
+                transition: all 1.5s;
+
+                &:focus {
+                    border-color: #5257a6;
+                }
+
+                &::placeholder {
+                    font-size: 15px;
+                }
+            }
+            input {
+                box-sizing: border-box;
+                height: 50px;
+                padding: 20px 0;
+            }
+
+            .btn {
+                margin-top: 50px;
+            }
+        }
+
+        // 右侧公司联系方式
+        .right {
+            background-color: white;
+            width: 45%;
+            padding: 20px;
+
+            // border-radius: 50%;
+            transition: all 0.5s;
+            &:hover {
+                cursor: pointer;
+                transform: translateY(-5%);
+                box-shadow: 0 0 10px skyblue;
+            }
+            h3 {
+                font-size: 18px;
+                font-weight: bold;
+                color: #6262a0;
+                margin: 20px 0;
+            }
+            .desc {
+                padding-right: 100px;
+                text-align: left;
+            }
+            .contact-list {
+                li {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 20px;
+                    transition: all 0.5s;
+                    svg {
+                        font-size: 25px;
+                        margin-right: 10px;
+                    }
+                    &:hover {
+                        color: #ff8a73;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ------------- 底部版权区域 -------------
+footer {
+    padding: 100px 0;
+
+    .header.wrap {
+        text-align: center;
+        padding-bottom: 100px;
+        border-bottom: 1px solid #d0d0e2;
+        img {
+            width: 15%;
+        }
+        h3 {
+            font-size: 32px;
+            color: #6262a0;
+            font-weight: bold;
+            margin: 30px 0 20px 0;
+        }
+
+        .contact-list {
+            width: 50%;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            font-size: 18px;
+            font-weight: bold;
+
+            li {
+                margin-bottom: 20px;
+
+                transition: all 0.5s;
+                &:hover {
+                    cursor: pointer;
+                    color: #ff8a73;
+                }
+            }
+        }
+    }
+
+    .time {
+        text-align: center;
+        margin: 40px 0;
+    }
+}
+
+// 视频播放区域
+#video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 9, 9, 0.5);
+    display: none;
+
+    // 遮罩层
+    .cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(15, 9, 9, 0.5);
+    }
+
+    // 视频内容区域
+    .content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: 75vw;
+        height: 85vh;
+        transform: translateY(100%);
+        opacity: 0;
+        transition: all 1.5s;
+
+        // 视频播放区域镶嵌的html代码
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        // 关闭图标
+        .close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translate(50%, -50%);
+            color: rgb(233, 230, 230);
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            background-color: red;
+            font-size: 18px;
+            transition: all 0.5s;
+            &:hover {
+                cursor: pointer;
+                color: black;
+            }
+        }
+    }
+}
+
+// color: #6262a0; 蓝色
+// color: #ff8a73; 橙色
+
+// --------------- 响应式模块 -----------------
+
+// 平板
+@media screen and (max-width: 992px) {
+    // ------------- 轮播图区域 -------------
+    #swiper {
+        // 主要区域
+        .wrap.main {
+            // 左侧文字描述
+            .left {
+                h1 {
+                    font-size: 30px;
+                }
+                .desc {
+                    font-size: 16px;
+                    margin-bottom: 40px;
+                }
+            }
+        }
+    }
+
+    // ------------- 小卡片区域 -------------
+    #card {
+        .wrap {
+            flex-direction: column;
+            align-items: center;
+            .card-item {
+                width: 80%;
+                margin-bottom: 40px;
+            }
+        }
+    }
+
+    // ------------- 关于公司区域 -------------
+    #about {
+        .wrap {
+            flex-direction: column;
+            .left {
+                text-align: center;
+                img {
+                    width: 70%;
+                }
+            }
+            .right {
+                .top {
+                    font-size: 18px;
+                }
+                .title {
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+
+    // ------------- 技能数据区域 -------------
+    #skill {
+        .wrap {
+            flex-direction: column;
+            .left {
+                width: 60%;
+            }
+        }
+    }
+
+    // ------------- 最近新闻区域 -------------
+    #recent-news {
+        .card-list {
+            flex-direction: column;
+            align-items: center;
+            .item {
+                width: 80%;
+                margin-bottom: 35px;
+            }
+        }
+    }
+
+    // ------------- 客户回馈区域 -------------
+    #customer-feedback {
+        .wrap {
+            flex-direction: column;
+            .left {
+                width: 50%;
+            }
+            .right {
+                width: 90%;
+            }
+        }
+    }
+
+    // ------------- 联系区域 -------------
+    #contact {
+        .main {
+            flex-direction: column;
+            .left,
+            .right {
+                margin-bottom: 35px;
+                width: 80%;
+            }
+        }
+    }
+}
+
+// 手机
+@media screen and (max-width: 768px) {
+    // ------------- 公司服务区域 -------------
+    #service {
+        .wrap {
+            // 卡片区域
+            .card .card-list {
+                flex-direction: column;
+                align-items: center;
+                .card-item {
+                    width: 80%;
+                    margin-bottom: 35px;
+                }
+            }
+            // 公司数据区域
+            .company-data {
+                flex-wrap: wrap;
+                .item {
+                    width: 40%;
+                    margin-bottom: 35px;
+                }
+            }
+        }
+    }
+
+    // ------------- 项目展示区域 -------------
+    #project {
+        .card-swiper {
+            .list {
+                flex-wrap: wrap;
+                .item {
+                    width: 40%;
+                    margin-bottom: 35px;
+                }
+            }
+        }
+    }
+
+    // ------------- 技能数据区域 -------------
+    #skill {
+        .wrap {
+            .right {
+                width: 80%;
+            }
+        }
+    }
+    // ------------- 团队成员区域 -------------
+    #creative-team {
+        .team-worker {
+            .card-list {
+                flex-wrap: wrap;
+                .item {
+                    width: 45%;
+                    margin-bottom: 35px;
+                }
+            }
+        }
+    }
+
+    // ------------- 创建模板区域 -------------
+    #template {
+        .wrap {
+            flex-direction: column;
+        }
+    }
+
+    // ------------- 价格计划区域 -------------
+    #price-plan {
+        .card {
+            flex-direction: column;
+            align-items: center;
+            .item {
+                width: 80%;
+                margin-bottom: 35px;
+            }
+        }
+    }
+}
+
+// 小屏幕手机
+@media screen and (max-width: 576px) {
+    .wrap {
+        width: 93vw;
+    }
+    // ------------- 头部导航区域 -------------
+    header {
+        nav {
+            .wrap {
+                .right {
+                    display: none;
+                }
+            }
+        }
+    }
+    // ------------- 轮播图区域 -------------
+    #swiper {
+        .wrap.main {
+            .right {
+                display: none;
+            }
+        }
+    }
+    // ------------- 小卡片区域 -------------
+    #card {
+        .wrap .card-item {
+            width: 100%;
+        }
+    }
+    // ------------- 关于公司区域 -------------
+    #about {
+        .wrap .right .btn {
+            width: 60%;
+        }
+    }
+
+    // ------------- 公司服务区域 -------------
+    #service {
+        .wrap .card .card-list .card-item {
+            width: 100%;
+        }
+    }
+
+    // ------------- 项目展示区域 -------------
+    #project {
+        .card-swiper .list .item {
+            width: 100%;
+        }
+    }
+
+    // ------------- 团队成员区域 -------------
+    #creative-team {
+        .team-worker .card-list .item {
+            width: 100%;
+        }
+    }
+
+    // ------------- 创建模板区域 -------------
+    #template {
+        .wrap {
+            .left .btn {
+                width: 50%;
+            }
+        }
+    }
+
+    // ------------- 价格计划区域 -------------
+    #price-plan {
+        .card .item {
+            width: 100%;
+        }
+    }
+
+    // ------------- 最近新闻区域 -------------
+    #recent-news {
+        .card-list .item {
+            width: 100%;
+        }
+    }
+
+    // ------------- 订阅区域 -------------
+    #subscribe {
+        .wrap {
+            flex-direction: column;
+            width: 93vw;
+            .left {
+                width: 100%;
+            }
+            .right {
+                width: 100%;
+                text-align: center;
+                .letter {
+                    width: 50%;
+                }
+            }
+        }
+    }
+}
